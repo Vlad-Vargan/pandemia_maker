@@ -2,12 +2,12 @@
 Website for makers to help fight COVID
 
 
-###Dependencies:
+### Dependencies:
 
 * pip3 install flask
 * pip3 install python-dotenv
 
-###To launch:
+### To launch:
 
 ..pandemia_maker/
 flask run
