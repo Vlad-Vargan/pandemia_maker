@@ -10,4 +10,5 @@ Website for makers to help fight COVID
 ### To launch:
 
 ..pandemia_maker/
+
 flask run
