@@ -12,174 +12,55 @@
 }-->
 
 <!-- FIRST BLOCK -->
-{% block parts_0 %}
-  {% for part in parts_0 %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-panel" href="#{{  part["code"]  }}">
-            {{ part["name"] }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ part["code"]}}" class="panel-collapse collapse">
-        <div class="panel-body">
-            {% if part["photos"] %}
-                {% for photo in part["photos"] %}
-                    <div class="col-lg-4 col-sm-4">
-                      <a class="thumbnail">
-                        <img src="static/img/parts_photos/1_air_systems_connections/{{  part["code"]  }}/{{  photo  }}" alt="{{  photo  }}">
-                      </a>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <div class="col-lg-12 col-sm-12">
-                <hr color="gray">
-                <p>{{ part["needs"] }}</p>
-                <hr color="gray">
-                <p>{{ part["confirm"] }}</p>
-                <hr color="gray">
-                <p>{{ part["prod"] }}</p>
-                
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["source"] }}">Джерело</a>
-                </div>
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["gd"] }}">Скачати з Google Диску</a>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endblock %}
+{% block content %}
+    {% for parts in BOX %}
+        <div class="tab-pane active" id="{{ parts[0] }}">
+          <p>
+            <img width="6%" src="http://www.tauli.cat/institut/wp-content/uploads/2020/04/proteccio.png" alt="">
+            I'm in Section 1. Donec vulputate tristique elit ut molestie. Suspendisse faucibus bibendum ipsum. </p>
+            <div class="panel-group" id="accordion-panel">
 
-
-<!-- SECOND BLOCK -->
-{% block parts_1 %}
-  {% for part in parts_1 %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-panel_1" href="#{{  part["code"]  }}">
-            {{ part["name"] }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ part["code"]}}" class="panel-collapse collapse">
-        <div class="panel-body">
-            {% if part["photos"] %}
-                {% for photo in part["photos"] %}
-                    <div class="col-lg-4 col-sm-4">
-                      <a class="thumbnail">
-                        <img src="static/img/parts_photos/2_rotection_systems/{{  part["code"]  }}/{{  photo  }}" alt="{{  photo  }}">
-                      </a>
+          {% for part in parts[1] %}
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-panel" href="#{{  part["code"]  }}">
+                    {{ part["name"] }}
+                  </a>
+                </h4>
+              </div>
+              <div id="{{ part["code"]}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    {% if part["photos"] %}
+                        {% for photo in part["photos"] %}
+                            <div class="col-lg-4 col-sm-4">
+                              <a class="thumbnail">
+                                <img src="static/img/parts_photos/{{ parts[0] }}/{{  part["code"]  }}/{{  photo  }}" alt="{{  photo  }}">
+                              </a>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="col-lg-12 col-sm-12">
+                        <hr color="gray">
+                        <p>{{ part["needs"] }}</p>
+                        <hr color="gray">
+                        <p>{{ part["confirm"] }}</p>
+                        <hr color="gray">
+                        <p>{{ part["prod"] }}</p>
+                        
+                        <div class="col-lg-6 col-sm-6" align = "center">
+                          <a class="btn btn-primary btn-lg" href = "{{ part["source"] }}">Джерело</a>
+                        </div>
+                        <div class="col-lg-6 col-sm-6" align = "center">
+                          <a class="btn btn-primary btn-lg" href = "{{ part["gd"] }}">Скачати з Google Диску</a>
+                        </div>
                     </div>
-                {% endfor %}
-            {% endif %}
-            <div class="col-lg-12 col-sm-12">
-                <hr color="gray">
-                <p>{{ part["needs"] }}</p>
-                <hr color="gray">
-                <p>{{ part["confirm"] }}</p>
-                <hr color="gray">
-                <p>{{ part["prod"] }}</p>
-                
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["source"] }}">Джерело</a>
                 </div>
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["gd"] }}">Скачати з Google Диску</a>
-                </div>
+              </div>
             </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endblock %}
+          {% endfor %}
 
-<!-- THIRD BLOCK -->
-{% block parts_2 %}
-  {% for part in parts_2 %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-panel_2" href="#{{  part["code"]  }}">
-            {{ part["name"] }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ part["code"]}}" class="panel-collapse collapse">
-        <div class="panel-body">
-            {% if part["photos"] %}
-                {% for photo in part["photos"] %}
-                    <div class="col-lg-4 col-sm-4">
-                      <a class="thumbnail">
-                        <img src="static/img/parts_photos/3_non-invasive_ventilation/{{  part["code"]  }}/{{  photo  }}" alt="{{  photo  }}">
-                      </a>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <div class="col-lg-12 col-sm-12">
-                <hr color="gray">
-                <p>{{ part["needs"] }}</p>
-                <hr color="gray">
-                <p>{{ part["confirm"] }}</p>
-                <hr color="gray">
-                <p>{{ part["prod"] }}</p>
-                
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["source"] }}">Джерело</a>
-                </div>
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["gd"] }}">Скачати з Google Диску</a>
-                </div>
-            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  {% endfor %}
-{% endblock %}
-
-<!-- FORTH BLOCK -->
-{% block parts_3 %}
-  {% for part in parts_3 %}
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-panel_3" href="#{{  part["code"]  }}">
-            {{ part["name"] }}
-          </a>
-        </h4>
-      </div>
-      <div id="{{ part["code"]}}" class="panel-collapse collapse">
-        <div class="panel-body">
-            {% if part["photos"] %}
-                {% for photo in part["photos"] %}
-                    <div class="col-lg-4 col-sm-4">
-                      <a class="thumbnail">
-                        <img src="static/img/parts_photos/4_work_accelerators/{{  part["code"]  }}/{{  photo  }}" alt="{{  photo  }}">
-                      </a>
-                    </div>
-                {% endfor %}
-            {% endif %}
-            <div class="col-lg-12 col-sm-12">
-                <hr color="gray">
-                <p>{{ part["needs"] }}</p>
-                <hr color="gray">
-                <p>{{ part["confirm"] }}</p>
-                <hr color="gray">
-                <p>{{ part["prod"] }}</p>
-                
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["source"] }}">Джерело</a>
-                </div>
-                <div class="col-lg-6 col-sm-6" align = "center">
-                  <a class="btn btn-primary btn-lg" href = "{{ part["gd"] }}">Скачати з Google Диску</a>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
 {% endblock %}
